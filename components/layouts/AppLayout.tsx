@@ -8,7 +8,7 @@ type Props = {
 
 export const AppLayout: FunctionComponent<Props> = ({ children }) => {
   return (
-    <main>
+    <main className="bp4-dark">
       <Header />
       {children}
       <Footer />

@@ -10,6 +10,7 @@ import '../assets/sass/style.scss';
 import '../assets/sass/tailwind.scss';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
+import './index.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { events: routerEvents } = useRouter();

@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  title: 'Home Title for Project Name ',
+  title: 'Dico Personal App',
   titleTemplate: '%s | Project Name',
   description: 'Project Name description',
   openGraph: {

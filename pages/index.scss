@@ -1,0 +1,36 @@
+@import '~@blueprintjs/core/lib/scss/variables';
+
+.week-title {
+  @apply mb-5 text-center text-2xl font-medium;
+}
+
+.task-wrapper {
+  & > * {
+    @apply inline-block;
+  }
+}
+
+.cross-label {
+  @apply text-xl font-bold;
+}
+
+.cross-count {
+  @apply ml-2 text-3xl;
+}
+
+.status-box {
+  @apply ml-5 w-3/12 p-2 text-black;
+  background-color: $turquoise5;
+
+  .status {
+    @apply mb-0 text-lg;
+  }
+
+  hr {
+    @apply my-1;
+    border-color: black;
+  }
+
+  .description {
+  }
+}

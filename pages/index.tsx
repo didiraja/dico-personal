@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button, Callout } from '@blueprintjs/core';
 
 const Home: NextPage = () => {
-  const [crossCount, setCross] = useState(2);
+  const [crossCount, setCross] = useState(0);
   const [crossStatus, setStatus] = useState({
     intent: '',
     icon: '',
@@ -52,6 +52,8 @@ const Home: NextPage = () => {
       <div className="week-title">Semana de *segunda* a *sexta*</div>
 
       <div className="main-wrapper">
+        {/* <TaskRow task="Cross na semana" count={crossCount}/> */}
+
         <div className="task-wrapper">
           <p className="cross-label">Cross na semana:</p>
 
@@ -65,14 +67,26 @@ const Home: NextPage = () => {
             <Callout icon={crossStatus.icon} intent={crossStatus.intent} title={`Status: ${crossStatus.title}`}>
               {crossStatus.description}
             </Callout>
-
-            {/* <p className="status">Status: {crossStatus.title}</p>
-            <hr />
-            <div className="description">{crossStatus.description}</div> */}
           </div>
         </div>
 
-        <aside className="calendar"></aside>
+        <div className="task-wrapper">
+          <p className="cross-label">Alimentação Correta:</p>
+
+          <p className="cross-count">{crossCount}</p>
+
+          <div className="box-button">
+            <Button large icon="plus" intent="primary" onClick={updateCross} />
+          </div>
+
+          <div className="status-box">
+            <Callout icon={crossStatus.icon} intent={crossStatus.intent} title={`Status: ${crossStatus.title}`}>
+              {crossStatus.description}
+            </Callout>
+          </div>
+        </div>
+
+        {/* <aside className="calendar"></aside> */}
 
         {/* <div className="task-wrapper">
           <p className="dinner-label font-bold text-xl">Alimentação correta:</p>

@@ -1,4 +1,3 @@
-import { PrimaryButton } from '@components/ui/button';
 import React, { FunctionComponent } from 'react';
 
 const Header: FunctionComponent = () => {
@@ -13,7 +12,7 @@ const Header: FunctionComponent = () => {
                 <li>Home</li>
                 <li>About</li>
                 <li>
-                  <PrimaryButton>Sign Up</PrimaryButton>
+                  <button>Sign Up</button>
                 </li>
               </ul>
             </nav>

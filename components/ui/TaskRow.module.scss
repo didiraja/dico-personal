@@ -1,0 +1,48 @@
+@import '~@blueprintjs/core/lib/scss/variables';
+
+.taskWrapper {
+  @apply mb-3 flex justify-center py-3;
+  background-color: $dark-gray4;
+
+  & > * {
+    @apply mx-3 inline-block;
+  }
+}
+
+.taskLabel {
+  @apply w-2/12 text-right text-3xl font-medium;
+}
+
+.taskCount {
+  @apply ml-2 text-6xl font-bold;
+}
+
+.taskLabel,
+.taskCount,
+.boxButton {
+  @apply flex items-center;
+}
+
+.boxButton {
+  & > button > span > svg {
+    $icon-size: 40px;
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
+
+.statusBox {
+  @apply ml-5 w-3/12;
+
+  .status {
+    @apply mb-0 text-lg;
+  }
+
+  hr {
+    @apply my-1;
+    border-color: white;
+  }
+
+  .description {
+  }
+}

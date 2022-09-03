@@ -2,7 +2,7 @@
 
 // HELPERS
 .debug {
-  @appy border border-red-700;
+  @apply border border-red-700;
 }
 
 .week-title {
@@ -12,50 +12,3 @@
 // .main-wrapper {
 //   @apply ;
 // }
-
-.task-wrapper {
-  @apply flex justify-center py-3;
-  background-color: $dark-gray4;
-
-  & > * {
-    @apply mx-3 inline-block;
-  }
-}
-
-.cross-label {
-  @apply w-2/12 text-right text-3xl font-medium;
-}
-
-.cross-count {
-  @apply ml-2 text-6xl font-bold;
-}
-
-.cross-label,
-.cross-count,
-.box-button {
-  @apply flex items-center;
-}
-
-.box-button {
-  & > button > span > svg {
-    $icon-size: 40px;
-    width: $icon-size;
-    height: $icon-size;
-  }
-}
-
-.status-box {
-  @apply ml-5 w-3/12;
-
-  .status {
-    @apply mb-0 text-lg;
-  }
-
-  hr {
-    @apply my-1;
-    border-color: white;
-  }
-
-  .description {
-  }
-}

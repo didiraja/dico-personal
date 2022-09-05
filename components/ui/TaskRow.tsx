@@ -5,7 +5,7 @@ import { Button, Callout } from '@blueprintjs/core';
 
 import style from './TaskRow.module.scss';
 
-const TaskRow: NextPage = ({ label, count, updateCount }) => {
+const TaskRow: NextPage = ({ label, count, sumCount, subCount }) => {
   const [crossStatus, setStatus] = useState({
     intent: '',
     icon: '',
@@ -13,7 +13,10 @@ const TaskRow: NextPage = ({ label, count, updateCount }) => {
     description: '',
   });
 
+  // console.log(count);
+  
   useEffect(() => {
+
     const STATUS = {
       good: {
         intent: 'success',
@@ -49,7 +52,8 @@ const TaskRow: NextPage = ({ label, count, updateCount }) => {
       <p className={style.taskCount}>{count}</p>
 
       <div className={style.boxButton}>
-        <Button large icon="plus" intent="primary" onClick={updateCount} />
+        <Button large icon="plus" intent="primary" onClick={sumCount} />
+        <Button large icon="minus" intent="primary" onClick={subCount} />
       </div>
 
       <div className={style.statusBox}>

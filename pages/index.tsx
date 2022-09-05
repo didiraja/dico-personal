@@ -1,34 +1,33 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { useCounter } from '../utils/hooks/useCounter';
 
 import TaskRow from '../components/ui/TaskRow';
 import { DateClass } from '../utils/Date';
 
 const Home: NextPage = () => {
-  const [crossCount, setCross] = useState(0);
-  const [dinnerCount, setDinner] = useState(0);
+
+  const [crossCount, sumCross, subCross] = useCounter();
+  const [dinnerCount, sumDinner, subDinner] = useCounter();
 
   const dateClass = new DateClass();
   
-
-  function updateState(state, setState) {
-    if (state >= 5) return;
-
-    setState(state + 1);
-  }
-
   return (
     <div className="w-full">
       <div className="week-title">Semana de <strong>{dateClass.workingWeekStart()} a {dateClass.workingWeekEnd()}</strong>
       </div>
 
       <div className="main-wrapper">
-        <TaskRow label="Cross na semana" count={crossCount} updateCount={() => updateState(crossCount, setCross)} />
+        <TaskRow label="Cross na semana"
+          count={crossCount}
+          sumCount={() => sumCross()}
+          subCount={() => subCross()}
+        />
 
         <TaskRow
           label="Alimentação decente"
           count={dinnerCount}
-          updateCount={() => updateState(dinnerCount, setDinner)}
+          sumCount={() => sumDinner()}
+          subCount={() => subDinner()}
         />
 
         {/* <aside className="calendar"></aside> */}

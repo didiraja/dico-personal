@@ -1,25 +1,21 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export function useCounter() {
+  const [count, setCount] = useState(0);
 
-    const [count, setCount] = useState(0);
-
-    function sumState() {
-
-        if (count >= 5) {
-            return;
-        }
-        
-        return setCount(count + 1);
+  function sumState() {
+    if (count >= 5) {
+      return;
     }
 
-    function subState() {
+    return setCount(count + 1);
+  }
 
-        if (count <= 0)
-            return;
+  function subState() {
+    if (count <= 0) return;
 
-        return setCount(count - 1);
-    }
+    return setCount(count - 1);
+  }
 
-    return [count, sumState, subState];
+  return [count, sumState, subState];
 }

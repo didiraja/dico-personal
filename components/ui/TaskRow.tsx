@@ -1,23 +1,44 @@
-import type { NextPage } from 'next';
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect, FC } from 'react';
 import { Button, Callout } from '@blueprintjs/core';
-
 import style from './TaskRow.module.scss';
 
-const TaskRow: NextPage = ({ label, count, sumCount, subCount }) => {
-  const [crossStatus, setStatus] = useState({
+interface TaskProps {
+  label: string;
+  count: number;
+  sumCount: () => number;
+  subCount: () => number;
+}
+
+interface TaskObject {
+  intent: '';
+  icon: '';
+  title: '';
+  description: '';
+}
+
+interface StatusBody {
+  intent: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface StatusObject {
+  good: StatusBody;
+  ok: StatusBody;
+  bad: StatusBody;
+}
+
+const TaskRow: FC<TaskProps> = ({ label, count, sumCount, subCount }) => {
+  const [taskStatus, setStatus] = useState<TaskObject>({
     intent: '',
     icon: '',
     title: '',
     description: '',
   });
 
-  // console.log(count);
-  
   useEffect(() => {
-
-    const STATUS = {
+    const STATUS: StatusObject = {
       good: {
         intent: 'success',
         icon: 'heart',
@@ -53,12 +74,12 @@ const TaskRow: NextPage = ({ label, count, sumCount, subCount }) => {
 
       <div className={style.boxButton}>
         <Button large icon="plus" intent="primary" onClick={sumCount} />
-        <Button large icon="minus" intent="primary" onClick={subCount} />
+        <Button className="ml-3" large icon="minus" intent="primary" onClick={subCount} />
       </div>
 
       <div className={style.statusBox}>
-        <Callout icon={crossStatus.icon} intent={crossStatus.intent} title={`Status: ${crossStatus.title}`}>
-          {crossStatus.description}
+        <Callout icon={taskStatus.icon} intent={taskStatus.intent} title={`Status: ${taskStatus.title}`}>
+          {taskStatus.description}
         </Callout>
       </div>
     </div>

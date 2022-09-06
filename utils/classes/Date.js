@@ -1,4 +1,4 @@
-import { startOfWeek, nextMonday, nextFriday, format, isToday, parseISO, toDate  } from 'date-fns';
+import { startOfWeek, nextMonday, nextFriday, format, isToday, parseISO, toDate } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 export default class DateClass {

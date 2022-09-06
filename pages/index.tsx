@@ -4,9 +4,9 @@ import { useCounter } from '../utils/hooks/useCounter';
 
 import TaskRow from '../components/ui/TaskRow';
 import DateClass from '../utils/classes/Date';
-import LocalStorageClass  from '../utils/classes/LocalStorage';
+import LocalStorageClass from '../utils/classes/LocalStorage';
 
-import { STORAGE_NAME } from '../utils/consts'
+import { STORAGE_NAME } from '../utils/consts';
 
 const Home: NextPage = () => {
   const [crossCount, sumCross, subCross] = useCounter();
@@ -16,13 +16,11 @@ const Home: NextPage = () => {
   const storageClass = new LocalStorageClass();
 
   useEffect(() => {
-
     storageClass.SetData(STORAGE_NAME, {
       date: dateClass.today,
       crossfit: crossCount,
       dinner: dinnerCount,
     });
-
   }, [crossCount, dinnerCount]);
 
   return (

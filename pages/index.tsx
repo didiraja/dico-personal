@@ -3,21 +3,26 @@ import type { NextPage } from 'next';
 import { useCounter } from '../utils/hooks/useCounter';
 
 import TaskRow from '../components/ui/TaskRow';
-import { DateClass } from '../utils/Date';
+import DateClass from '../utils/classes/Date';
+import LocalStorageClass  from '../utils/classes/LocalStorage';
+
+import { STORAGE_NAME } from '../utils/consts'
 
 const Home: NextPage = () => {
   const [crossCount, sumCross, subCross] = useCounter();
   const [dinnerCount, sumDinner, subDinner] = useCounter();
 
   const dateClass = new DateClass();
+  const storageClass = new LocalStorageClass();
 
   useEffect(() => {
-    // const obj = {
-    //   date: new Date(),
-    //   crossfit: crossCount,
-    //   dinner: dinnerCount,
-    // };
-    // console.log(JSON.stringify(obj));
+
+    storageClass.SetData(STORAGE_NAME, {
+      date: dateClass.today,
+      crossfit: crossCount,
+      dinner: dinnerCount,
+    });
+
   }, [crossCount, dinnerCount]);
 
   return (

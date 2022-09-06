@@ -1,10 +1,22 @@
-import { startOfWeek, nextMonday, nextFriday, format } from 'date-fns';
+import { startOfWeek, nextMonday, nextFriday, format, isToday, parseISO, toDate  } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
-export class DateClass {
+export default class DateClass {
   constructor() {
     this.today = new Date();
     this.week = startOfWeek(this.today);
+  }
+
+  toDate(dateObj) {
+    return toDate(dateObj);
+  }
+
+  parseISO(dateObj) {
+    return parseISO(dateObj);
+  }
+
+  isToday(dateObj) {
+    return isToday(dateObj);
   }
 
   formattedDate(dateObj) {

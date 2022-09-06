@@ -1,25 +1,25 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   title: 'Dico Personal App',
-  titleTemplate: '%s | Project Name',
+  titleTemplate: '%s',
   description: 'Project Name description',
-  openGraph: {
-    type: 'website',
-    locale: 'en_IE',
-    url: 'https://www.url.ie/',
-    site_name: 'Project Name',
-  },
-  twitter: {
-    handle: '@project_name',
-    site: '@project_name',
-    cardType: 'summary_large_image',
-  },
-  additionalLinkTags: [
-    {
-      rel: 'icon',
-      href: '/favicon.ico',
-    },
-  ],
+  // openGraph: {
+  //   type: 'website',
+  //   locale: 'en_IE',
+  //   url: 'https://www.url.ie/',
+  //   site_name: 'Project Name',
+  // },
+  // twitter: {
+  //   handle: '@project_name',
+  //   site: '@project_name',
+  //   cardType: 'summary_large_image',
+  // },
+  // additionalLinkTags: [
+  //   {
+  //     rel: 'icon',
+  //     href: '/favicon.ico',
+  //   },
+  // ],
   additionalMetaTags: [
     {
       httpEquiv: 'content-type',

@@ -4,7 +4,7 @@ import { useCounter } from '../utils/hooks/useCounter';
 
 import TaskRow from '../components/ui/TaskRow';
 import DateClass from '../utils/classes/Date';
-import LocalStorageClass from '../utils/classes/LocalStorage';
+import LocalStorageClass, { IS_CLIENT } from '../utils/classes/LocalStorage';
 
 import { STORAGE_NAME } from '../utils/consts';
 

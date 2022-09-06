@@ -1,7 +1,8 @@
-const IS_CLIENT = typeof window !== 'undefined';
 import DateClass from './Date';
 
 const dateClass = new DateClass();
+
+export const IS_CLIENT = typeof window !== 'undefined';
 
 export default class LocalStorageClass {
   constructor() {
@@ -31,6 +32,8 @@ export default class LocalStorageClass {
   }
 
   SetData(storageItem, storageData) {
+    // console.log('disparou SetData');
+
     if (IS_CLIENT) {
       const actualStorage = this.GetData(storageItem);
 

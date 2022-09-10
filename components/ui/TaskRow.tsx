@@ -1,5 +1,6 @@
 import { useState, useEffect, FC } from 'react';
-import { Button, Callout } from '@blueprintjs/core';
+import { Button, Callout, Intent } from '@blueprintjs/core';
+import { IconName } from '@blueprintjs/icons';
 import style from './TaskRow.module.scss';
 
 interface TaskProps {
@@ -10,15 +11,15 @@ interface TaskProps {
 }
 
 interface TaskObject {
-  intent: '';
-  icon: '';
-  title: '';
-  description: '';
+  intent: Intent;
+  icon: null | IconName;
+  title: string;
+  description: string;
 }
 
 interface StatusBody {
-  intent: string;
-  icon: string;
+  intent: Intent;
+  icon: IconName;
   title: string;
   description: string;
 }
@@ -31,8 +32,8 @@ interface StatusObject {
 
 const TaskRow: FC<TaskProps> = ({ label, count, sumCount, subCount }) => {
   const [taskStatus, setStatus] = useState<TaskObject>({
-    intent: '',
-    icon: '',
+    intent: Intent.NONE,
+    icon: null,
     title: '',
     description: '',
   });

@@ -4,7 +4,7 @@ import { useCounter } from '../utils/hooks/useCounter';
 
 import TaskRow from '../components/ui/TaskRow';
 import DateClass from '../utils/classes/Date';
-import LocalStorageClass, { IS_CLIENT } from '../utils/classes/LocalStorage';
+import LocalStorageClass from '../utils/classes/LocalStorage';
 
 import { STORAGE_NAME } from '../utils/consts';
 
@@ -33,14 +33,9 @@ const Home: NextPage = () => {
       </div>
 
       <div className="main-wrapper">
-        <TaskRow label="Cross na semana" count={crossCount} sumCount={() => sumCross()} subCount={() => subCross()} />
+        <TaskRow label="Cross na semana" count={Number(crossCount)} sumCount={sumCross} subCount={subCross} />
 
-        <TaskRow
-          label="Alimentação decente"
-          count={dinnerCount}
-          sumCount={() => sumDinner()}
-          subCount={() => subDinner()}
-        />
+        <TaskRow label="Alimentação decente" count={Number(dinnerCount)} sumCount={sumDinner} subCount={subDinner} />
 
         {/* <aside className="calendar"></aside> */}
       </div>

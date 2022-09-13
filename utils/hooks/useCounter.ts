@@ -5,14 +5,14 @@ export function useCounter() {
 
   function sumState() {
     if (count >= 5) {
-      return;
+      return 0;
     }
 
     return setCount(count + 1);
   }
 
   function subState() {
-    if (count <= 0) return;
+    if (count <= 0) return 0;
 
     return setCount(count - 1);
   }

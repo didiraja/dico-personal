@@ -4,7 +4,7 @@ const dateClass = new DateClass();
 
 export const IS_CLIENT = typeof window !== 'undefined';
 
-export default class LocalStorageClass {
+class LocalStorageClass {
   constructor() {
     if (IS_CLIENT) this.root = window.localStorage;
   }
@@ -82,3 +82,5 @@ export default class LocalStorageClass {
     }
   }
 }
+
+export default new LocalStorageClass();

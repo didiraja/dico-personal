@@ -12,23 +12,20 @@ const Home: NextPage = () => {
   const [crossCount, sumCross, subCross] = useCounter();
   const [dinnerCount, sumDinner, subDinner] = useCounter();
 
-  const dateClass = new DateClass();
-  const storageClass = new LocalStorageClass();
-
-  useEffect(() => {
-    storageClass.SetData(STORAGE_NAME, {
-      date: dateClass.today,
-      crossfit: crossCount,
-      dinner: dinnerCount,
-    });
-  }, [crossCount, dinnerCount]);
+  // useEffect(() => {
+  //   // LocalStorageClass.SetData(STORAGE_NAME, {
+  //   //   date: DateClass.today,
+  //   //   crossfit: crossCount,
+  //   //   dinner: dinnerCount,
+  //   // });
+  // }, [crossCount, dinnerCount]);
 
   return (
     <div className="w-full">
       <div className="week-title">
         Semana de{' '}
         <strong>
-          {dateClass.workingWeekStart()} a {dateClass.workingWeekEnd()}
+          {DateClass.workingWeekStart()} a {DateClass.workingWeekEnd()}
         </strong>
       </div>
 

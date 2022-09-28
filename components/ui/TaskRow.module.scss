@@ -1,7 +1,7 @@
 @import '~@blueprintjs/core/lib/scss/variables';
 
 .taskWrapper {
-  @apply mb-3 flex justify-center py-3;
+  @apply mb-3 py-3;
   background-color: $dark-gray4;
 
   & > * {
@@ -10,18 +10,18 @@
 }
 
 .taskLabel {
-  @apply w-2/12 text-right text-3xl font-medium;
+  @apply text-right text-3xl font-medium;
 }
 
 .taskCount {
   @apply ml-2 text-6xl font-bold;
 }
 
-.taskLabel,
-.taskCount,
-.boxButton {
-  @apply flex items-center;
-}
+// .taskLabel,
+// .taskCount,
+// .boxButton {
+//   @apply ;
+// }
 
 .boxButton {
   & > button > span > svg {
@@ -32,7 +32,7 @@
 }
 
 .statusBox {
-  @apply ml-5 w-3/12;
+  @apply ml-5;
 
   .status {
     @apply mb-0 text-lg;

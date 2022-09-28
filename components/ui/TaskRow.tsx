@@ -60,11 +60,13 @@ const TaskRow: FC<TaskProps> = ({ label, count, sumCount, subCount }) => {
       },
     };
 
-    if (count > 3) return setStatus(STATUS.good);
+    const average = 3;
 
-    if (count === 3) return setStatus(STATUS.ok);
+    if (count > average) return setStatus(STATUS.good);
 
-    if (count < 3) return setStatus(STATUS.bad);
+    if (count === average) return setStatus(STATUS.ok);
+
+    if (count < average) return setStatus(STATUS.bad);
   }, [count]);
 
   return (

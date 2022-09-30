@@ -24,12 +24,20 @@ class DateClass {
   }
 
   workingWeekStart() {
+    return nextMonday(this.week);
+  }
+
+  workingWeekEnd() {
+    return nextFriday(this.week);
+  }
+
+  formattedWeekStart() {
     const mondayDate = nextMonday(this.week);
 
     return this.formattedDate(mondayDate);
   }
 
-  workingWeekEnd() {
+  formattedWeekEnd() {
     const fridayDate = nextFriday(this.week);
 
     return this.formattedDate(fridayDate);

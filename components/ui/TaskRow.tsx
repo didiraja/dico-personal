@@ -6,8 +6,8 @@ import style from './TaskRow.module.scss';
 interface TaskProps {
   label: string;
   count: number;
-  sumCount: () => number;
-  subCount: () => number;
+  sumCount: () => void;
+  subCount: () => void;
 }
 
 interface TaskObject {

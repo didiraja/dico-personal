@@ -25,6 +25,7 @@ class RequestClass {
       database: 'personal',
       collection: 'app',
     };
+    this.date = DateClass.formatISO(DateClass.workingWeekStart());
   }
 
   _request(config = {}) {
@@ -39,7 +40,7 @@ class RequestClass {
       data: {
         ...this.db,
         filter: {
-          date: DateClass.workingWeekStart(),
+          date: this.date,
         },
       },
     };
@@ -53,10 +54,10 @@ class RequestClass {
       data: {
         ...this.db,
         filter: {
-          date: DateClass.workingWeekStart(),
+          date: this.date,
         },
         replacement: {
-          date: DateClass.workingWeekStart(),
+          date: this.date,
           ...updatedData,
         },
       },

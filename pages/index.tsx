@@ -4,21 +4,24 @@ import { useCounter } from '../utils/hooks/useCounter';
 
 import TaskRow from '../components/ui/TaskRow';
 import DateClass from '../utils/classes/Date';
+import RequestClass from '../utils/classes/Request';
 import LocalStorageClass from '../utils/classes/LocalStorage';
 
 import { STORAGE_NAME } from '../utils/consts';
 
 const Home: NextPage = () => {
-  const [crossCount, sumCross, subCross] = useCounter();
-  const [dinnerCount, sumDinner, subDinner] = useCounter();
+  const [crossCount, setCross, sumCross, subCross] = useCounter();
+  const [dinnerCount, setDinner, sumDinner, subDinner] = useCounter();
 
-  // useEffect(() => {
-  //   // LocalStorageClass.SetData(STORAGE_NAME, {
-  //   //   date: DateClass.today,
-  //   //   crossfit: crossCount,
-  //   //   dinner: dinnerCount,
-  //   // });
-  // }, [crossCount, dinnerCount]);
+  // Load from DB
+  useEffect(() => {
+    RequestClass.findOne().then(response => {
+      const { crossfit, dinner } = response.data.document;
+
+      setCross(() => crossfit);
+      setDinner(() => dinner);
+    });
+  });
 
   return (
     <div className="w-full">

@@ -1,4 +1,14 @@
-import { startOfToday, startOfWeek, nextMonday, nextFriday, format, isToday, parseISO, toDate } from 'date-fns';
+import {
+  startOfToday,
+  startOfWeek,
+  nextMonday,
+  nextFriday,
+  format,
+  isToday,
+  formatISO,
+  parseISO,
+  toDate,
+} from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 class DateClass {
@@ -9,6 +19,10 @@ class DateClass {
 
   toDate(dateObj) {
     return toDate(dateObj);
+  }
+
+  formatISO(dateObj) {
+    return formatISO(dateObj);
   }
 
   parseISO(dateObj) {

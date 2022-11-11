@@ -3,6 +3,10 @@ import { useState } from 'react';
 export function useCounter() {
   const [count, setCount] = useState(0);
 
+  function setState(value: number): void {
+    return setCount(value);
+  }
+
   function sumState() {
     if (count >= 5) {
       return 0;
@@ -17,5 +21,5 @@ export function useCounter() {
     return setCount(count - 1);
   }
 
-  return [count, sumState, subState];
+  return [count, setState, sumState, subState];
 }

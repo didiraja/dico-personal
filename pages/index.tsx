@@ -25,7 +25,8 @@ const Home: NextPage = () => {
       <div className="week-title">
         Semana de{' '}
         <strong>
-          {DateClass.workingWeekStart()} a {DateClass.workingWeekEnd()}
+          {' '}
+          {DateClass.formattedWeekStart()} a {DateClass.formattedWeekEnd()}
         </strong>
       </div>
 
